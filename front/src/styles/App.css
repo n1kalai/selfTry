@@ -1,0 +1,340 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  padding-left: 120px;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+  outline: 0;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 30px 0 30px 50px;
+}
+
+.ReactModal__Overlay {
+  z-index: 9999;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.leftNav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  display: flex;
+  max-width: 50px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.leftNav:hover {
+  max-width: 130px;
+  transition: all 0.4s;
+}
+.navA {
+  display: flex;
+  align-items: center;
+  color: rgb(123, 55, 179);
+  font-weight: bold;
+}
+
+.navA img {
+  margin-right: 12px;
+}
+
+.navA:hover {
+  font-size: 20px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  align-items: flex-start;
+  background-color: lightsteelblue;
+  padding: 20px;
+  padding-left: 15px;
+}
+.navigation li {
+  margin-bottom: 15px;
+}
+
+.navigation li a {
+  text-decoration: none;
+  font-size: 17px;
+}
+.listOfFolders {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 95%;
+  margin: 0 auto;
+  justify-content: flex-start;
+}
+
+.folderBackground {
+  height: 200px;
+  width: 268px;
+  background-image: url("../assets/folder.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  list-style-type: none;
+  margin-bottom: 20px;
+  margin-right: 15px;
+}
+
+.folderName {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 90%;
+  bottom: 0;
+  line-height: 200px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 24px;
+  color: rgb(88, 85, 85);
+  z-index: 999;
+}
+
+.folderName:hover {
+  color: black;
+}
+
+.detailedFolder {
+  position: absolute;
+  bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  left: 9px;
+  padding-left: 0;
+}
+
+.detailedFolder li {
+  margin-right: 15px;
+  font-size: 20px;
+  color: black;
+  opacity: 0.7;
+}
+
+.filesBackground {
+  height: 165px;
+  padding-top: 20px;
+  width: 240px;
+
+  position: relative;
+  list-style-type: none;
+  backface-visibility: hidden;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  touch-action: none;
+  -ms-touch-action: none;
+  clip-rule: evenodd;
+}
+
+.filesBackground img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.detailedFile {
+  position: absolute;
+  bottom: 2px;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  left: 9px;
+  padding-left: 0;
+  z-index: 999;
+}
+
+.fileRemoveButton {
+  position: absolute;
+  background-color: #ea4c3f;
+  top: 25px;
+  left: 0;
+  z-index: 0;
+  width: 49%;
+  border: none;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  padding-bottom: 30px;
+  color: white;
+  font-weight: bold;
+  padding-top: 7px;
+  transition: all 0.2s;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.filesBackground:hover .fileRemoveButton {
+  top: -20px;
+}
+
+.buttonTitle {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonTitle button {
+  width: 120px;
+  height: 40px;
+  background-color: transparent;
+  border: solid 1px teal;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* KEYWORDS STYLES STARTS HERE */
+
+.keywordsBackground {
+  height: 155px;
+  width: 240px;
+  background-image: url("../assets/keyboard.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  list-style-type: none;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.noteBackground {
+  height: 205px;
+  width: 200px;
+  background-image: url("../assets/note.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  list-style-type: none;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.detailedNote {
+  position: absolute;
+  bottom: 11px;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  left: 9px;
+  padding-left: 0;
+}
